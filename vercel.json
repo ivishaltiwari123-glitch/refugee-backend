@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ]
+}
+```
+
+Save it. Your folder should now look like:
+```
+refugee-backend/
+├── api/
+│   └── index.py        ✅ already done
+├── main.py
+├── requirements.txt    ✅ already updated
+├── vercel.json         ← create this now
+├── .env
+└── ...
+```
+
+Then push to GitHub:
+```
+git add .
+git commit -m "Add vercel.json and mangum adapter"
+git push
